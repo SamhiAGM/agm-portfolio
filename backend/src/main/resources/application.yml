@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: samhi-portfolio
+  profiles:
+    default: dev
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/portfolio}
+    username: ${DB_USERNAME:portfolio}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+  tomcat:
+    max-http-form-post-size: 32KB
+portfolio:
+  frontend-url: ${FRONTEND_URL:http://localhost:3000}
+  contact-limit: ${CONTACT_LIMIT:5}
+  seed-enabled: ${SEED_ENABLED:true}

@@ -1,0 +1,20 @@
+-- Correct the catalog using the project's published README. Safe for fresh and existing seeds.
+INSERT INTO technologies(name) SELECT 'JavaFX' WHERE NOT EXISTS (SELECT 1 FROM technologies WHERE name='JavaFX');
+INSERT INTO technologies(name) SELECT 'TCP sockets' WHERE NOT EXISTS (SELECT 1 FROM technologies WHERE name='TCP sockets');
+UPDATE projects SET contribution='Client-server software project focused on coordination between citizens, Grama Niladhari officers and Divisional Secretariat officers. The repository describes its Java, JavaFX, TCP socket and PostgreSQL architecture.', updated_at=CURRENT_TIMESTAMP WHERE slug='gramalink-lk';
+DELETE FROM project_technologies WHERE project_id IN (SELECT id FROM projects WHERE slug='gramalink-lk');
+INSERT INTO project_technologies(project_id,technology_id,position) SELECT p.id,t.id,0 FROM projects p,technologies t WHERE p.slug='gramalink-lk' AND t.name='Java';
+INSERT INTO project_technologies(project_id,technology_id,position) SELECT p.id,t.id,1 FROM projects p,technologies t WHERE p.slug='gramalink-lk' AND t.name='JavaFX';
+INSERT INTO project_technologies(project_id,technology_id,position) SELECT p.id,t.id,2 FROM projects p,technologies t WHERE p.slug='gramalink-lk' AND t.name='TCP sockets';
+INSERT INTO project_technologies(project_id,technology_id,position) SELECT p.id,t.id,3 FROM projects p,technologies t WHERE p.slug='gramalink-lk' AND t.name='PostgreSQL';
+DELETE FROM project_architecture WHERE project_id IN (SELECT id FROM projects WHERE slug='gramalink-lk');
+INSERT INTO project_architecture(project_id,position,step) SELECT id,0,'JavaFX client interface' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_architecture(project_id,position,step) SELECT id,1,'Java TCP socket server' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_architecture(project_id,position,step) SELECT id,2,'Role-based coordination workflows' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_architecture(project_id,position,step) SELECT id,3,'PostgreSQL data layer' FROM projects WHERE slug='gramalink-lk';
+DELETE FROM project_features WHERE project_id IN (SELECT id FROM projects WHERE slug='gramalink-lk');
+INSERT INTO project_features(project_id,position,feature) SELECT id,0,'Citizen & officer coordination' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_features(project_id,position,feature) SELECT id,1,'Request tracking' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_features(project_id,position,feature) SELECT id,2,'Live notifications' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_features(project_id,position,feature) SELECT id,3,'File transfer' FROM projects WHERE slug='gramalink-lk';
+INSERT INTO project_features(project_id,position,feature) SELECT id,4,'Role-based access' FROM projects WHERE slug='gramalink-lk';

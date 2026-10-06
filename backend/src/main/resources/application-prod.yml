@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+portfolio:
+  frontend-url: ${FRONTEND_URL}
+server:
+  forward-headers-strategy: none
+logging:
+  level:
+    root: WARN
+    com.samhi.portfolio: INFO

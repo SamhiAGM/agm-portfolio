@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const require=createRequire(path.join(root,'frontend','package.json'));
+const ts=require('typescript');
+const source=await fs.readFile(path.join(root,'frontend/constants/portfolio.ts'),'utf8');
+const {outputText}=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}});
+const content={};new Function('exports','require',outputText)(content,require);
+const dir=path.join(root,'backend/src/main/resources/content');await fs.mkdir(dir,{recursive:true});
+await fs.writeFile(path.join(dir,'portfolio.json'),JSON.stringify(content,null,2)+'\n');
+console.log('Synced portfolio seed data from frontend constants.');

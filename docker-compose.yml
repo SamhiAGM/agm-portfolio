@@ -1,0 +1,45 @@
+name: samhi-portfolio
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME:-portfolio}
+      POSTGRES_USER: ${DB_USERNAME:-portfolio}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in the root .env file}
+    volumes:
+      - portfolio_data:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 15
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-portfolio}
+      DB_USERNAME: ${DB_USERNAME:-portfolio}
+      DB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      FRONTEND_URL: ${FRONTEND_URL:-http://127.0.0.1:3000}
+      SPRING_PROFILES_ACTIVE: prod
+      CONTACT_LIMIT: ${CONTACT_LIMIT:-5}
+    ports:
+      - '127.0.0.1:${BACKEND_PORT:-8080}:8080'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://127.0.0.1:8080/api/v1}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://127.0.0.1:3000}
+    ports:
+      - '127.0.0.1:${FRONTEND_PORT:-3000}:3000'
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  portfolio_data:

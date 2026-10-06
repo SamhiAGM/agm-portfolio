@@ -1,0 +1,272 @@
+{
+  "profile": {
+    "name": "Mohamed Samhi",
+    "fullName": "Abdul Gaffoor Mohamed Samhi",
+    "email": "mohamedsamhi1207@gmail.com",
+    "phone": "0753999958",
+    "location": "Kinniya, Sri Lanka",
+    "github": "https://github.com/SamhiAGM",
+    "linkedin": "https://www.linkedin.com/in/mohamed-samhi-1387642a0",
+    "organization": "https://github.com/Gridora-Systems"
+  },
+  "navigation": [
+    "Home",
+    "About",
+    "Skills",
+    "Projects",
+    "Experience",
+    "Education",
+    "Contact"
+  ],
+  "projects": [
+    {
+      "slug": "lankacare",
+      "title": "LankaCare",
+      "subtitle": "A connected healthcare ecosystem.",
+      "category": "FULL-STACK · HEALTHCARE",
+      "color": "cyan",
+      "shortDescription": "Connecting citizens, hospitals and healthcare professionals through one centralized digital platform.",
+      "githubUrl": "https://github.com/SamhiAGM/Lankacare",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Next.js",
+        "React",
+        "JWT"
+      ],
+      "features": [
+        "Citizen patient portal",
+        "Appointment management",
+        "Digital health wallet",
+        "Medical records & prescriptions",
+        "Hospital & clinic scheduling",
+        "Role-based workflows",
+        "NIC-based registration",
+        "Email & mobile OTP verification"
+      ],
+      "problem": "Healthcare journeys involve disconnected appointments, records and administrative workflows.",
+      "solution": "A centralized platform brings citizen-facing services and hospital operations into a shared digital ecosystem.",
+      "architecture": [
+        "Next.js / React interface",
+        "Spring Boot REST API",
+        "JWT authentication & role-based access",
+        "Database integration"
+      ],
+      "challenges": "Coordinating workflows across citizens, doctors, hospitals and staff requires clear access boundaries and consistent patient data.",
+      "contribution": "Full-stack project development spanning citizen-facing interfaces and backend healthcare workflows. The repository documents the implementation.",
+      "improvements": "Potential next steps: audit trails, stronger automated workflow coverage and deployment observability.",
+      "status": "Portfolio project",
+      "featured": true
+    },
+    {
+      "slug": "ercs",
+      "title": "ERCS",
+      "subtitle": "Clarity when every second counts.",
+      "category": "FULL-STACK · DEVOPS",
+      "color": "purple",
+      "shortDescription": "An emergency resource coordination system for incidents, response teams and resource allocation. Built as a two-member engineering project.",
+      "githubUrl": "https://github.com/SamhiAGM/ercs-emergency-resource-coordination-system",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Express.js",
+        "PostgreSQL",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "features": [
+        "Incident registration & monitoring",
+        "Resource requests & allocation",
+        "Response team coordination",
+        "Resource shortage tracking",
+        "Operational dashboard",
+        "CI/CD workflows"
+      ],
+      "problem": "Emergency organizations need a common operational view to coordinate incidents, teams and scarce resources.",
+      "solution": "A centralized platform structures incident reporting, requests, allocations and operational monitoring.",
+      "architecture": [
+        "React / TypeScript frontend",
+        "Node.js / Express REST API",
+        "PostgreSQL database",
+        "Docker containers & GitHub Actions CI/CD"
+      ],
+      "challenges": "Keeping resource requests, available inventory and allocations consistent while supporting multiple operational workflows.",
+      "contribution": "Developed collaboratively in a two-member team for EC5207 DevOps Engineering, combining application development and delivery practices.",
+      "improvements": "Potential next steps: allocation conflict testing, notification workflows and operational observability.",
+      "status": "Academic team project",
+      "featured": true
+    },
+    {
+      "slug": "gramalink-lk",
+      "title": "GramaLink LK",
+      "subtitle": "Public services, closer to people.",
+      "category": "SOFTWARE · CIVIC TECHNOLOGY",
+      "color": "blue",
+      "shortDescription": "A digital citizen and government service platform designed to improve interaction with local administrative services.",
+      "githubUrl": "https://github.com/SamhiAGM/GramaLink-LK",
+      "technologies": [
+        "Java",
+        "JavaFX",
+        "TCP sockets",
+        "PostgreSQL"
+      ],
+      "features": [
+        "Citizen & officer coordination",
+        "Request tracking",
+        "Live notifications",
+        "File transfer",
+        "Role-based access"
+      ],
+      "problem": "Citizens need more accessible ways to interact with local government and administrative services.",
+      "solution": "A digital service platform makes those interactions easier to organize and access.",
+      "architecture": [
+        "JavaFX client interface",
+        "Java TCP socket server",
+        "Role-based coordination workflows",
+        "PostgreSQL data layer"
+      ],
+      "challenges": "Translating administrative processes into understandable digital workflows while preserving clear roles and responsibilities.",
+      "contribution": "Client-server software project focused on coordination between citizens, Grama Niladhari officers and Divisional Secretariat officers. The repository describes its Java, JavaFX, TCP socket and PostgreSQL architecture.",
+      "improvements": "Potential next steps: usability validation, service status tracking and accessibility improvements.",
+      "status": "Portfolio project",
+      "featured": true
+    },
+    {
+      "slug": "glucose-forecasting",
+      "title": "Personalized glucose forecasting",
+      "subtitle": "From time-series data to foresight.",
+      "category": "MACHINE LEARNING · HEALTH",
+      "color": "pink",
+      "shortDescription": "Exploring personalized glucose prediction approximately 30 minutes ahead, using continuous monitoring and contextual data.",
+      "githubUrl": "https://github.com/SamhiAGM/personalized-glucose-forecasting",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Time-series analysis"
+      ],
+      "features": [
+        "CGMacros & ShanghaiT2DM datasets",
+        "Data preprocessing",
+        "Time-series feature engineering",
+        "Regression models",
+        "Model validation",
+        "Personalized response prediction"
+      ],
+      "problem": "Glucose levels change with personal and contextual factors. Forecasting requires careful handling of sequential data.",
+      "solution": "Explore preprocessing, engineered time-series features and regression models to estimate glucose around 30 minutes ahead.",
+      "architecture": [
+        "CGMacros / ShanghaiT2DM data",
+        "Cleaning & preprocessing",
+        "Feature engineering",
+        "Regression training",
+        "Validation & prediction"
+      ],
+      "challenges": "Avoiding temporal data leakage and assessing personalized predictions with meaningful model validation. No performance metrics are claimed here.",
+      "contribution": "Machine-learning project work covering data preparation, features, regression and evaluation.",
+      "improvements": "Potential next steps: compare patient-specific models, strengthen temporal validation and evaluate prediction uncertainty.",
+      "status": "Research & learning project",
+      "featured": true
+    }
+  ],
+  "skillGroups": [
+    {
+      "category": "Backend",
+      "level": "Primary",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Hibernate",
+        "REST APIs",
+        "Maven"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "level": "Primary / working with",
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "Database",
+      "level": "Working with",
+      "technologies": [
+        "PostgreSQL",
+        "MySQL"
+      ]
+    },
+    {
+      "category": "Machine learning",
+      "level": "Working with",
+      "technologies": [
+        "Python",
+        "NumPy",
+        "Pandas",
+        "Scikit-learn",
+        "Data cleaning",
+        "Feature engineering",
+        "Regression"
+      ]
+    },
+    {
+      "category": "DevOps",
+      "level": "Working with / exploring",
+      "technologies": [
+        "Git",
+        "GitHub",
+        "Docker",
+        "GitHub Actions",
+        "CI/CD",
+        "Cloud",
+        "MLOps"
+      ]
+    },
+    {
+      "category": "Tools",
+      "level": "Working with",
+      "technologies": [
+        "VS Code",
+        "IntelliJ IDEA",
+        "Postman",
+        "Figma",
+        "Linux"
+      ]
+    }
+  ],
+  "journey": [
+    {
+      "title": "Computer engineering",
+      "organization": "University of Ruhuna",
+      "description": "Building a foundation across software, computing systems, networking and engineering problem solving."
+    },
+    {
+      "title": "Full-stack software development",
+      "organization": "Project-based engineering",
+      "description": "Developing healthcare, emergency coordination and citizen-service platforms."
+    },
+    {
+      "title": "Machine learning exploration",
+      "organization": "Personalized glucose forecasting",
+      "description": "Working with time-series data, feature engineering, regression and model validation."
+    },
+    {
+      "title": "DevOps engineering",
+      "organization": "EC5207 · ERCS",
+      "description": "Collaborative software development with containerization and CI/CD practices."
+    },
+    {
+      "title": "Programming & problem solving",
+      "organization": "IEEE Xtreme · RedCypher",
+      "description": "Competition participation, collaborative thinking and practical problem solving."
+    }
+  ]
+}

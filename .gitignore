@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+target/
+.env
+.env.local
+.sites-runtime/
+*.log
+.tools/
+test-results/
