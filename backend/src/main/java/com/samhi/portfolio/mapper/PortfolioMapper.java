@@ -8,7 +8,7 @@ import java.util.*;
 @Component
 public class PortfolioMapper {
     public ProjectResponse project(Project p) {
-        return new ProjectResponse(p.getId(),p.getSlug(),p.getTitle(),p.getSubtitle(),p.getCategory(),p.getShortDescription(),p.getFullDescription(),p.getGithubUrl(),p.getLiveUrl(),p.getImageUrl(),p.getStatus(),p.getColor(),p.isFeatured(),p.getTechnologies().stream().map(Technology::getName).toList(),List.copyOf(p.getFeatures()),List.copyOf(p.getArchitecture()),p.getProblem(),p.getSolution(),p.getChallenges(),p.getContribution(),p.getImprovements(),p.getCreatedAt(),p.getUpdatedAt());
+        return new ProjectResponse(p.getId(),p.getSlug(),p.getTitle(),p.getSubtitle(),p.getCategory(),p.getShortDescription(),p.getFullDescription(),p.getGithubUrl(),p.getLiveUrl(),p.getImageUrl(),p.getStatus(),p.getColor(),p.isFeatured(),p.getTechnologies().stream().map(t -> t.getName()).toList(),List.copyOf(p.getFeatures()),List.copyOf(p.getArchitecture()),p.getProblem(),p.getSolution(),p.getChallenges(),p.getContribution(),p.getImprovements(),p.getCreatedAt(),p.getUpdatedAt());
     }
     public List<SkillGroup> skills(List<Skill> skills) {
         Map<String,List<Skill>> groups=new LinkedHashMap<>();
