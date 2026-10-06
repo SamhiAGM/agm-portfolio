@@ -186,13 +186,17 @@ p {
   transition:
     background 0.4s,
     border 0.4s,
-    box-shadow 0.4s;
+    box-shadow 0.4s,
+    transform 0.4s;
 }
 .navigation.scrolled {
   background: #0d1225dc;
   backdrop-filter: blur(20px);
   border-color: var(--border);
   box-shadow: 0 10px 40px #0003;
+}
+.navigation.hidden-nav {
+  transform: translateY(-150%);
 }
 .logo {
   display: inline-flex;

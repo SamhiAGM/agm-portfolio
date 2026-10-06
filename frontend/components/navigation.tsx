@@ -7,9 +7,19 @@ export function Navigation() {
   const [open, setOpen] = useState(false),
     [active, setActive] = useState("home"),
     [scrolled, setScrolled] = useState(false),
+    [isHidden, setIsHidden] = useState(false),
     [command, setCommand] = useState(false);
   useEffect(() => {
-    const scroll = () => setScrolled(window.scrollY > 30);
+    let lastScrollY = window.scrollY;
+    const scroll = () => {
+      setScrolled(window.scrollY > 30);
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      lastScrollY = window.scrollY;
+    };
     scroll();
     window.addEventListener("scroll", scroll, { passive: true });
     const observer = new IntersectionObserver(
@@ -38,7 +48,7 @@ export function Navigation() {
   }, []);
   return (
     <>
-      <header className={`navigation ${scrolled ? "scrolled" : ""}`}>
+      <header className={`navigation ${scrolled ? "scrolled" : ""} ${isHidden ? "hidden-nav" : ""}`}>
         <a href="#home" className="logo" aria-label="Samhi home">
           <span className="logo-mark">
             s<span>.</span>
